@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import com.zym.crud.bean.Employee;
 import com.zym.crud.bean.EmployeeExample;
 
+
 public interface EmployeeMapper {
     long countByExample(EmployeeExample example);
 
@@ -21,6 +22,10 @@ public interface EmployeeMapper {
     List<Employee> selectByExample(EmployeeExample example);
 
     Employee selectByPrimaryKey(Integer empId);
+    
+    List<Employee> selectByExampleWithDep(EmployeeExample example);
+    
+    Employee selectByPrimaryKeyWithDep(Integer empId);
 
     int updateByExampleSelective(@Param("record") Employee record, @Param("example") EmployeeExample example);
 
